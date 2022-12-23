@@ -1,0 +1,89 @@
+/*********************
+      센터 고정 탭
+*********************/
+
+.tab {
+  display: flex;
+  position: relative;
+
+  ul {
+    li {
+      transition: all 300ms;
+      display: inline-block;
+      border: .1rem solid #efebef;
+      border-right: none;
+
+      &:last-of-type {
+        border-right: .1rem solid #efebef;
+      }
+    }
+
+    li a {
+      color: #888888;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+    }
+
+    li a.active {
+      background: #333333;
+      color: #ffffff;
+    }
+  }
+}
+
+/*********************
+       전체가 탭
+*********************/
+
+.tab-full {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  &.tab-center {
+    justify-content : center;
+    label {
+      padding : 1rem 3rem;
+    }
+  }
+
+  input[type=radio],
+  .tab-content {
+    display: none;
+  }
+
+  input[type=radio]:checked + label {
+    z-index: auto;
+    background: #333333;
+    color: #ffffff;
+  }
+
+  input[type=radio]:checked + label + .tab-content {
+    display: block;
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #666666;
+    padding: 1rem 2rem;
+    border-top: .1rem solid #efebef;
+    border-left: .1rem solid #efebef;
+
+    &:last-of-type {
+      border-right: .1rem solid #efebef;
+    }
+  }
+
+  .tab-content {
+    width: 100%;
+    margin-top: -.1rem;
+    padding: 2em 1em;
+    border: .1rem solid #efebef;
+    order: 1;
+    font-weight: 300;
+  }
+}
+
